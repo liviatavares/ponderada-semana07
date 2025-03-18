@@ -41,7 +41,14 @@ console.log("O produto dos valores é:", produto);
 ```
 Qual das seguintes alternativas melhor descreve o que o código faz?
 
-A) O código avalia a expressão booleana, imprime `true`, calcula o produto dos números na lista e imprime o resultado no console.
+**A) O código avalia a expressão booleana, imprime `true`, calcula o produto dos números na lista e imprime o resultado no console.**
+
+o código avalia a expressão e imprime true pois ele cumpre os requisitos do resultado:
+i) p % q === 1 significa que o mdc de p e q é 1. nesse caso, isso é verdade pois 10 e 3 são primos entre si;
+ii) r * 2 > p significa que o dobro de r deve ser maior que o valor de p. nesse caso, isso é verdadeiro pois 6 * 2 > 10;
+iii) q + r < p significa que a soma de q e r deve ser menor que p, o que também é verdade, já que 6 + 3 < 10
+como as condições do resultado são o resultado verdadeiro para i) e ii) ou iii), e os três são verdadeiros, o código imprime true.
+além disso, a estrutura posterior retorna o produto dos valores. o for diz que, à medida que o índice do array valores aumenta, o produto é atualizado para o produto de todos os números da lista.
 
 B) O código avalia a expressão booleana, imprime `false`, calcula o produto dos números na lista e imprime o resultado no console.
 
@@ -129,7 +136,9 @@ Qual das seguintes alternativas melhor descreve o comportamento do código?
 
 A) O código verifica se a idade indica um adulto ou um idoso e exibe a mensagem correspondente.
 
-B) O código verifica se a idade pertence à faixa adulta. Se for, exibe "Você é um adulto!". Caso contrário, verifica se é menor de idade e exibe "Você é menor de idade!". Se nenhuma das condições anteriores for verdadeira, exibe "Você está na melhor idade!".
+**B) O código verifica se a idade pertence à faixa adulta. Se for, exibe "Você é um adulto!". Caso contrário, verifica se é menor de idade e exibe "Você é menor de idade!". Se nenhuma das condições anteriores for verdadeira, exibe "Você está na melhor idade!".**
+
+primeiro analisa se a idade é maior ou igual a 18 e menor que 60, no primeiro if. se sim, imprime "você é um adulto!". se a idade não se encaixar nessa faixa, segue para a próxima verificação, que verifica se a idade é menor que 18. se sim, imprime "você é menor de idade!". se nenhuma dessas duas condições for atendidas, segue para o else, que imprime "você está na melhor idade!". nesse caso, quando o código é rodado, imprime "você é um adulto!".
 
 C) O código verifica se a idade está entre 18 e 60 anos e, se for, imprime "Você é um adulto!". Se não estiver nesse intervalo, imprime "Você está na melhor idade!".
 
@@ -192,7 +201,7 @@ Dispositivo 3 ligado. Energia restante: 400
 
 Dispositivo 4 não pode ser ligado. Energia insuficiente.
 
-D)
+**D)**
 Dispositivo 1 ligado. Energia restante: 900
 
 Dispositivo 2 ligado. Energia restante: 300
@@ -203,6 +212,8 @@ Dispositivo 4 não pode ser ligado. Energia insuficiente.
 
 Dispositivo 5 não pode ser ligado. Energia insuficiente.
 
+
+
 ______
 
 **5)** Qual é a principal função do método update() em um jogo desenvolvido com Phaser.js?
@@ -211,7 +222,9 @@ Escolha a opção que melhor descreve seu propósito:
 
 A) O método update() é responsável por carregar os assets do jogo antes da cena ser exibida.
 
-B) O método update() é chamado continuamente a cada quadro (frame) do jogo, sendo usado para atualizar a lógica, movimentação e interações dos objetos na cena.
+**B) O método update() é chamado continuamente a cada quadro (frame) do jogo, sendo usado para atualizar a lógica, movimentação e interações dos objetos na cena.**
+
+o método update é atualizado continuamente, e é muito utilizado para movimentações, por exemplo, pois estas são ações que geralmente funcionarão continuamente (em loop) no jogo.
 
 C) O método update() renderiza todos os sprites na tela e garante que a física do jogo seja processada corretamente.
 
@@ -222,7 +235,7 @@ ______
 
 Escolha a opção que responde corretamente:
 
-A) Simular física avançada, incluindo corpos rígidos, colisões complexas e interação entre objetos com gravidade e forças.
+**A) Simular física avançada, incluindo corpos rígidos, colisões complexas e interação entre objetos com gravidade e forças.**
 
 B) Gerenciar eventos de entrada do usuário, como cliques e toques na tela, permitindo movimentação de personagens.
 
@@ -245,6 +258,24 @@ Pedidos entre R$50,00 e R$199,99 (inclusive) → "Frete com custo adicional!"
 Pedidos de R$200,00 ou mais → "Frete grátis!"
 ```
 Implemente um pseudocódigo que receba o valor total da compra e exiba a classificação correta do frete para o cliente.
+
+```javascript
+//criando a função para analisar o valor do pedido
+function analisarPedido (pedido) {
+//se o valor for menor que 50,
+if (pedido < 50) {
+console.log("Frete não disponível!")
+//se o valor for entre 50 e 199.99 (inclusive),
+} else if (pedido >= 50 && pedido <= 199.99) {
+console.log("Frete com custo adicional!")
+//se o pedido for maior que 199.99,
+} else {
+console.log ("Frete grátis!")
+}
+}
+analisarPedido(600);
+//imprime "frete grátis!"
+```
 ______
 
 **8)** Considere a implementação da classe base Veiculo em um sistema de modelagem de veículos. Sua tarefa é implementar, utilizando pseudocódigo, as classes derivadas Carro e Moto, que herdam da classe Veiculo, adicionando atributos específicos e métodos para calcular o consumo de combustível de um carro e de uma moto, respectivamente.
@@ -262,6 +293,18 @@ Método CalcularConsumo():
 ```
 Implementação genérica para cálculo de consumo, a ser sobrescrita pelas subclasses.
 Agora, implemente as classes Carro e Moto, garantindo que ambas herdem de Veiculo e possuam métodos específicos para calcular o consumo de combustível com base na quilometragem e eficiência do veículo.
+
+o código para a classe Veiculo seria:
+```javascript
+class Veiculo {
+  constructor
+}
+```
+
+```javascript
+class Carro extends Veiculo {
+}
+```
 ______
 
 **9)** Você é um cientista da NASA e está ajudando no desenvolvimento de um sistema de pouso para sondas espaciais em Marte. Seu objetivo é calcular o tempo necessário para que a sonda reduza sua velocidade até um nível seguro para pouso, considerando uma velocidade inicial de entrada na atmosfera marciana e uma taxa de desaceleração constante causada pelo atrito atmosférico e retrofoguetes.
