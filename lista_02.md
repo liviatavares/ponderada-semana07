@@ -59,10 +59,11 @@ D) O código avalia a expressão booleana, imprime `false` e ordena os valores e
 
 ______
 
-**2)** O código a seguir contém duas funções que calculam o limite de crédito de um cliente com base nos seus gastos e na renda mensal.
+2) O código a seguir contém duas funções que calculam o limite de crédito de um cliente com base nos seus gastos e na renda mensal.
+
+// Versão 1 da função de análise de crédito
 
 ```javascript
-// Versão 1 da função de análise de crédito
 function analisarCredito1() {
     var compras = [2500, 1200, 800, 100];
     var totalCompras = compras[0];
@@ -84,9 +85,8 @@ function analisarCredito1() {
     console.log(`Seu crédito foi ${status}. Saldo disponível: ${saldoDisponivel}.`);
 }
 ```
-
-```javascript
 // Versão 2 da função de análise de crédito
+```javascript
 function analisarCredito2() {
     var compras = [2500, 1200, 800, 100];
     var totalCompras = compras[0];
@@ -110,13 +110,13 @@ function analisarCredito2() {
 ```
 Se ambas as funções forem executadas com os valores fornecidos, qual será a saída exibida no console?
 
-A) Ambas as funções exibirão: 'Seu crédito foi negado. Saldo disponível: -600.'
+**A) Ambas as funções exibirão: 'Seu crédito foi aprovado. Saldo disponível: 400.'**
 
 B) analisarCredito1() exibirá: 'Seu crédito foi negado. Saldo disponível: -600.', enquanto analisarCredito2() exibirá: 'Seu crédito foi negado. Saldo disponível: -200.'
 
-C) analisarCredito1() exibirá: 'Seu crédito foi negado. Saldo disponível: -200.', enquanto analisarCredito2() exibirá: 'Seu crédito foi negado. Saldo disponível: -600.'
+C) analisarCredito1() exibirá: 'Seu crédito foi negado. Saldo disponível: -200.', enquanto analisarCredito2() exibirá: 'Seu crédito foi aprovado. Saldo disponível: 100.'
 
-D) Ambas as funções exibirão: 'Seu crédito foi negado. Saldo disponível: -200.'
+D) Ambas as funções exibirão: 'Seu crédito foi aprovado Saldo disponível: 500.'
 ______
 
 **3)** Considere o seguinte trecho de código em JavaScript:
@@ -294,16 +294,79 @@ Método CalcularConsumo():
 Implementação genérica para cálculo de consumo, a ser sobrescrita pelas subclasses.
 Agora, implemente as classes Carro e Moto, garantindo que ambas herdem de Veiculo e possuam métodos específicos para calcular o consumo de combustível com base na quilometragem e eficiência do veículo.
 
-o código para a classe Veiculo seria:
+o código seria:
 ```javascript
+//criando a classe veículo
 class Veiculo {
-  constructor
-}
-```
+    constructor (modelo, ano, precoGasolina, eficienciaEnergetica) {
+        //definindo os parâmetros ano, modelo, preço da gasolina e eficiência energética
+       this.modelo = modelo;
+       this.ano = ano;
+       this.precoGasolina = precoGasolina
+       this.eficienciaEnergetica = eficienciaEnergetica
+    }
 
-```javascript
-class Carro extends Veiculo {
+    //o consumo do veículo será o produto de todos os parâmetros acima
+    calcularConsumo(){
+        this.consumo = this.precoGasolina * this.volumeVeiculo * this.quilometrosRodados * this.eficienciaEnergetica
+    };
+
 }
+
+//criando a classe carro que herda de veículo
+class Carro extends Veiculo {
+    //os parâmetros são os mesmos, então o super é utilizado para herdar
+    constructor (modelo, ano, precoGasolina, eficienciaEnergetica) {
+        super (modelo, ano, precoGasolina, eficienciaEnergetica);
+    }
+
+    //definindo os parâmetros específicos para carro
+    calcularConsumo() {
+        this.precoGasolina = 6 //em reais/litro
+        this.volumeVeiculo = 20 // em litros
+        this.quilometrosRodados = 10000 // em km, por ano
+        this.eficienciaEnergetica = 0.5 // parâmetro de 0 a 1, 1 sendo pior e 0 sendo melhor (hipotético)
+        super.calcularConsumo(); //o super utiliza o cálculo do constructor do Veículo
+        
+        //imprime as características do veículo e seu consumo
+        console.log("Seu carro é um: " + this.modelo + " " + this.ano)
+        console.log ("O consumo deste carro será R$ " + this.consumo + " por ano")
+    };
+
+}
+
+//criando a classe moto que herda de veículo
+class Moto extends Veiculo {
+    //da mesma forma, os parâmetros são os mesmos, então o super é utilizado para herdar
+    constructor (modelo, ano, precoGasolina, eficienciaEnergetica) {
+        super (modelo, ano, precoGasolina, eficienciaEnergetica);
+    }
+
+    //definindo os parâmetros específicos para moto
+    calcularConsumo () {
+        this.precoGasolina = 4
+        this.volumeVeiculo = 10
+        this.quilometrosRodados = 10000
+        this.eficienciaEnergetica = 1
+        super.calcularConsumo();
+
+        //imprime as características do veículo e seu consumo
+        console.log("Sua moto é uma: " + this.modelo + " " + this.ano)
+        console.log ("O consumo desta moto será R$ " + this.consumo + " por ano")
+    };
+}
+
+//exemplos: moto1 é uma Yamaha 2006
+const moto1 = new Moto ("Yamaha", 2006)
+moto1.calcularConsumo();
+//imprime: "Sua moto é uma: Yamaha 2006
+//O consumo desta moto será R$ 200000 por ano"
+
+//exemplo: carro1 é um Corsa 2015
+const carro1 = new Carro ("Corsa", 2015)
+carro1.calcularConsumo();
+// imprime: "Seu carro é um: Corsa 2015
+// O consumo deste carro será R$ 1200000 por ano"
 ```
 ______
 
@@ -318,6 +381,9 @@ Considere a fórumla de atualização velocidade:
     velocidade = velocidadeInicial - desaceleracao * tempo
 ```
 Seu programa deve determinar quanto tempo será necessário para que a sonda atinja uma velocidade segura de pouso, sem ultrapassar os limites estabelecidos.
+
+```javascript
+```
 ______
 
 **10)** Em um sistema de análise financeira, as operações de investimento de uma empresa podem ser representadas por matrizes, onde cada linha representa um tipo de investimento e cada coluna representa um período de tempo.
@@ -350,3 +416,6 @@ Escrever("Total de investimentos acumulados:")
 ImprimirMatriz(totalInvestimentos)  
 ```
 Agora, implemente a função MultiplicarMatrizesInvestimento(matrizA, matrizB), que multiplica as duas matrizes, simulando o efeito de diferentes fatores de crescimento e impacto financeiro nos investimentos ao longo do tempo.
+
+```javascript
+```
