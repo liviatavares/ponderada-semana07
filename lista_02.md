@@ -383,6 +383,24 @@ Considere a fórumla de atualização velocidade:
 Seu programa deve determinar quanto tempo será necessário para que a sonda atinja uma velocidade segura de pouso, sem ultrapassar os limites estabelecidos.
 
 ```javascript
+var tempoMax = 50; //segundos
+var velocidadeInicial = 100; //metros/segundos
+var aceleracaoMax = 5; //metros/segundos^2
+var velocidadeMinima = 5; //metros/segundos
+var tempo;
+var aceleracao = 4; //metros/segundos^2
+var velocidade = 80; //metros/segundos
+
+function calcularTempo (velocidade, aceleracao) {
+    return tempo = (velocidadeInicial - velocidade)/(aceleracao)
+}
+
+if(aceleracao > aceleracaoMax || velocidade < velocidadeMinima || velocidade > velocidadeInicial || tempo > tempoMax || tempo <= 0) {
+    console.log("parâmetros inválidos");
+} else {
+    console.log("tempo: " + calcularTempo(velocidade, aceleracao) + " segundos");
+}
+
 ```
 ______
 
@@ -417,5 +435,63 @@ ImprimirMatriz(totalInvestimentos)
 ```
 Agora, implemente a função MultiplicarMatrizesInvestimento(matrizA, matrizB), que multiplica as duas matrizes, simulando o efeito de diferentes fatores de crescimento e impacto financeiro nos investimentos ao longo do tempo.
 
+o códgo para a função acima seria:
 ```javascript
+function somarMatrizesInvestimento(matrizA, matrizB) {
+    if (matrizA.length != matrizB.length || matrizA[0].length != matrizB[0].length) {
+        console.log("As matrizes não podem ser somadas. Elas têm dimensões diferentes.")
+        return null;
+    } else {
+        var linhas = matrizA.length;
+        var colunas = matrizA[0].length;
+        var matrizResultado = [];
+
+        for (i = 0; i <= linhas-1; i++) {
+            matrizResultado[i] = [];
+            for (j = 0; j <= colunas-1; j++) {
+                matrizResultado[i][j] = matrizA[i][j] + matrizB[i][j]
+            }
+        } 
+        return matrizResultado;
+    }
+}
+
+let investimentosAno1 = [[1000, 2000], [1500, 2500]]  
+let investimentosAno2 = [[1200, 1800], [1300, 2700]]  
+
+let totalInvestimentos = somarMatrizesInvestimento(investimentosAno1, investimentosAno2);
+console.log("Total de investimentos acumulados: ", totalInvestimentos);
+
+```
+o código da função MultiplicarMatrizesInvestimento será, então, 
+```javascript
+function multiplicarMatrizesInvestimento (matrizA, matrizB) {
+    if (matrizA[0].length != matrizB.length) {
+        console.log("As matrizes não podem ser multiplicadas.")
+        return null;
+    } else { 
+
+        var linhas = matrizA.length;
+        var colunas = matrizA[0].length;
+        var matrizResultado = [];
+
+        for (i = 0; i <= linhas-1; i++) {
+            matrizResultado[i] = [];
+            for (j = 0; j <= colunas-1; j++) {
+                let soma = 0;
+                for (let k = 0; k < matrizA[0].length; k++) {
+                    soma += matrizA[i][k] * matrizB[k][j];
+                }
+                matrizResultado[i][j] = soma;
+            }
+        } 
+        return matrizResultado;
+    }
+}
+
+let investimentosAno1 = [[1000, 2000], [1500, 2500]]  
+let investimentosAno2 = [[1200, 1800], [1300, 2700]]  
+
+let totalInvestimentos = multiplicarMatrizesInvestimento(investimentosAno1, investimentosAno2);
+console.log("Total de investimentos acumulados via produto: ", totalInvestimentos);
 ```
