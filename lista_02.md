@@ -112,7 +112,7 @@ Se ambas as funções forem executadas com os valores fornecidos, qual será a s
 
 **A) Ambas as funções exibirão: 'Seu crédito foi aprovado. Saldo disponível: 400.'**
 
-**
+*as funções funcionam de maneira semelhante, diferindo apenas nas suas sintaxes. no caso desse programa, imprimirão esse output pois o totalCompras será 2500 + 1200 + 800 + 100 = 4600, sendo, portanto, menor que o limite, e o saldo disponível será 400.*
 
 B) analisarCredito1() exibirá: 'Seu crédito foi negado. Saldo disponível: -600.', enquanto analisarCredito2() exibirá: 'Seu crédito foi negado. Saldo disponível: -200.'
 
@@ -214,7 +214,7 @@ Dispositivo 4 não pode ser ligado. Energia insuficiente.
 
 Dispositivo 5 não pode ser ligado. Energia insuficiente.
 
-**
+*o dispositivo 1 imprime dessa forma pois cumpre a condicional do primeiro if: o consumo para i = 0 será 300, e a energia restante será 1200 - 300 = 900. para o dispositivo 2, ele imprime desta forma pois o consumo será agora 600 + 300 = 900, e a energia restante será 1200 - 900 = 300. para o dispositivo 3,  o consumo é maior que a bateria, e agora o sistema usa a bateria extra, ainda sobrando 200 de energia. para o quarto e quinto dispositivos, porém, a energia restante é negativa, e portano imprime "energia insuiciente".*
 
 
 ______
