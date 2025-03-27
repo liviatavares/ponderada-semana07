@@ -43,12 +43,12 @@ Qual das seguintes alternativas melhor descreve o que o código faz?
 
 **A) O código avalia a expressão booleana, imprime `true`, calcula o produto dos números na lista e imprime o resultado no console.**
 
-o código avalia a expressão e imprime true pois ele cumpre os requisitos do resultado:
+*o código avalia a expressão e imprime true pois ele cumpre os requisitos do resultado:
 i) p % q === 1 significa que o mdc de p e q é 1. nesse caso, isso é verdade pois 10 e 3 são primos entre si;
 ii) r * 2 > p significa que o dobro de r deve ser maior que o valor de p. nesse caso, isso é verdadeiro pois 6 * 2 > 10;
 iii) q + r < p significa que a soma de q e r deve ser menor que p, o que também é verdade, já que 6 + 3 < 10
 como as condições do resultado são o resultado verdadeiro para i) e ii) ou iii), e os três são verdadeiros, o código imprime true.
-além disso, a estrutura posterior retorna o produto dos valores. o for diz que, à medida que o índice do array valores aumenta, o produto é atualizado para o produto de todos os números da lista.
+além disso, a estrutura posterior retorna o produto dos valores. o for diz que, à medida que o índice do array valores aumenta, o produto é atualizado para o produto de todos os números da lista.*
 
 B) O código avalia a expressão booleana, imprime `false`, calcula o produto dos números na lista e imprime o resultado no console.
 
@@ -112,6 +112,8 @@ Se ambas as funções forem executadas com os valores fornecidos, qual será a s
 
 **A) Ambas as funções exibirão: 'Seu crédito foi aprovado. Saldo disponível: 400.'**
 
+**
+
 B) analisarCredito1() exibirá: 'Seu crédito foi negado. Saldo disponível: -600.', enquanto analisarCredito2() exibirá: 'Seu crédito foi negado. Saldo disponível: -200.'
 
 C) analisarCredito1() exibirá: 'Seu crédito foi negado. Saldo disponível: -200.', enquanto analisarCredito2() exibirá: 'Seu crédito foi aprovado. Saldo disponível: 100.'
@@ -138,7 +140,7 @@ A) O código verifica se a idade indica um adulto ou um idoso e exibe a mensagem
 
 **B) O código verifica se a idade pertence à faixa adulta. Se for, exibe "Você é um adulto!". Caso contrário, verifica se é menor de idade e exibe "Você é menor de idade!". Se nenhuma das condições anteriores for verdadeira, exibe "Você está na melhor idade!".**
 
-primeiro analisa se a idade é maior ou igual a 18 e menor que 60, no primeiro if. se sim, imprime "você é um adulto!". se a idade não se encaixar nessa faixa, segue para a próxima verificação, que verifica se a idade é menor que 18. se sim, imprime "você é menor de idade!". se nenhuma dessas duas condições for atendidas, segue para o else, que imprime "você está na melhor idade!". nesse caso, quando o código é rodado, imprime "você é um adulto!".
+*primeiro analisa se a idade é maior ou igual a 18 e menor que 60, no primeiro if. se sim, imprime "você é um adulto!". se a idade não se encaixar nessa faixa, segue para a próxima verificação, que verifica se a idade é menor que 18. se sim, imprime "você é menor de idade!". se nenhuma dessas duas condições for atendidas, segue para o else, que imprime "você está na melhor idade!". nesse caso, quando o código é rodado, imprime "você é um adulto!".*
 
 C) O código verifica se a idade está entre 18 e 60 anos e, se for, imprime "Você é um adulto!". Se não estiver nesse intervalo, imprime "Você está na melhor idade!".
 
@@ -212,6 +214,7 @@ Dispositivo 4 não pode ser ligado. Energia insuficiente.
 
 Dispositivo 5 não pode ser ligado. Energia insuficiente.
 
+**
 
 
 ______
@@ -224,7 +227,7 @@ A) O método update() é responsável por carregar os assets do jogo antes da ce
 
 **B) O método update() é chamado continuamente a cada quadro (frame) do jogo, sendo usado para atualizar a lógica, movimentação e interações dos objetos na cena.**
 
-o método update é atualizado continuamente, e é muito utilizado para movimentações, por exemplo, pois estas são ações que geralmente funcionarão continuamente (em loop) no jogo.
+*o método update é atualizado continuamente, e é muito utilizado para movimentações, por exemplo, pois estas são ações que geralmente funcionarão continuamente (em loop) no jogo.*
 
 C) O método update() renderiza todos os sprites na tela e garante que a física do jogo seja processada corretamente.
 
@@ -236,6 +239,8 @@ ______
 Escolha a opção que responde corretamente:
 
 **A) Simular física avançada, incluindo corpos rígidos, colisões complexas e interação entre objetos com gravidade e forças.**
+
+*O Matter.js é uma biblioteca de física 2D para JavaScript. Ele é usado para simular interações físicas realistas em aplicações web e jogos, e pode ser aplicado em detecção de colisão, corpos rígidos, gravidade e forças, restrições e juntas e motores e animações.*
 
 B) Gerenciar eventos de entrada do usuário, como cliques e toques na tela, permitindo movimentação de personagens.
 
@@ -383,6 +388,7 @@ Considere a fórumla de atualização velocidade:
 Seu programa deve determinar quanto tempo será necessário para que a sonda atinja uma velocidade segura de pouso, sem ultrapassar os limites estabelecidos.
 
 ```javascript
+//parâmetros iniciais
 var tempoMax = 50; //segundos
 var velocidadeInicial = 100; //metros/segundos
 var aceleracaoMax = 5; //metros/segundos^2
@@ -395,11 +401,16 @@ function calcularTempo (velocidade, aceleracao) {
     return tempo = (velocidadeInicial - velocidade)/(aceleracao)
 }
 
+//nesse if, são colocadas as condições de erro 
 if(aceleracao > aceleracaoMax || velocidade < velocidadeMinima || velocidade > velocidadeInicial || tempo > tempoMax || tempo <= 0) {
     console.log("parâmetros inválidos");
 } else {
+//calcula o tempo
     console.log("tempo: " + calcularTempo(velocidade, aceleracao) + " segundos");
 }
+
+//nesse código, atribuí valores de velocidadeMinima, aceleracao e velocidade condizentes com as condições físicas do problema. para testar
+//outros valores, pode-se alterar estas variáveis.
 
 ```
 ______
@@ -438,17 +449,22 @@ Agora, implemente a função MultiplicarMatrizesInvestimento(matrizA, matrizB), 
 o códgo para a função acima seria:
 ```javascript
 function somarMatrizesInvestimento(matrizA, matrizB) {
+//se as matrizes tiverem tamanhos diferentes (linha e coluna), elas não podem ser somadas
     if (matrizA.length != matrizB.length || matrizA[0].length != matrizB[0].length) {
         console.log("As matrizes não podem ser somadas. Elas têm dimensões diferentes.")
         return null;
     } else {
+      //senão, definem-se as linhas e colunas
         var linhas = matrizA.length;
         var colunas = matrizA[0].length;
+        //a matriz resultado inicialmente é um array vazio, pois será atualizada depois
         var matrizResultado = [];
 
+        //completude da matrizResultado
         for (i = 0; i <= linhas-1; i++) {
             matrizResultado[i] = [];
             for (j = 0; j <= colunas-1; j++) {
+                //soma as linhas e colunas de cada matriz
                 matrizResultado[i][j] = matrizA[i][j] + matrizB[i][j]
             }
         } 
@@ -459,18 +475,23 @@ function somarMatrizesInvestimento(matrizA, matrizB) {
 let investimentosAno1 = [[1000, 2000], [1500, 2500]]  
 let investimentosAno2 = [[1200, 1800], [1300, 2700]]  
 
+//retorna a soma
 let totalInvestimentos = somarMatrizesInvestimento(investimentosAno1, investimentosAno2);
 console.log("Total de investimentos acumulados: ", totalInvestimentos);
+
+//imprime: 'Total de investimentos acumulados:  [ [ 2200, 3800 ], [ 2800, 5200 ] ]'
 
 ```
 o código da função MultiplicarMatrizesInvestimento será, então, 
 ```javascript
 function multiplicarMatrizesInvestimento (matrizA, matrizB) {
+//nesse caso, para multiplicá-las, elas podem ser de tamanhos diferentes, contanto que o número de colunas de A seja igual ao número de linhas de B
     if (matrizA[0].length != matrizB.length) {
         console.log("As matrizes não podem ser multiplicadas.")
         return null;
-    } else { 
 
+    } else { 
+        //definindo igual a outra função
         var linhas = matrizA.length;
         var colunas = matrizA[0].length;
         var matrizResultado = [];
@@ -478,10 +499,14 @@ function multiplicarMatrizesInvestimento (matrizA, matrizB) {
         for (i = 0; i <= linhas-1; i++) {
             matrizResultado[i] = [];
             for (j = 0; j <= colunas-1; j++) {
+            //inicializa a soma = 0
                 let soma = 0;
                 for (let k = 0; k < matrizA[0].length; k++) {
+                    //multiplica o elemento i de cada linha de A pelo elemento j de cada coluna de B, até prosseguir com todas as linhas e colunas, somando
+                    //continuamente
                     soma += matrizA[i][k] * matrizB[k][j];
                 }
+                //essa soma será a matrizResultado
                 matrizResultado[i][j] = soma;
             }
         } 
@@ -492,6 +517,9 @@ function multiplicarMatrizesInvestimento (matrizA, matrizB) {
 let investimentosAno1 = [[1000, 2000], [1500, 2500]]  
 let investimentosAno2 = [[1200, 1800], [1300, 2700]]  
 
+//retorna o produto das matrizes
 let totalInvestimentos = multiplicarMatrizesInvestimento(investimentosAno1, investimentosAno2);
 console.log("Total de investimentos acumulados via produto: ", totalInvestimentos);
+
+//imprime: 'Total de investimentos acumulados via produto:  [ [ 3800000, 7200000 ], [ 5050000, 9450000 ] ]'
 ```
